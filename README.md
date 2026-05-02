@@ -2,6 +2,8 @@
 
 A polished personal portfolio for software engineering internships and full-stack/backend roles. It is built with Next.js, React, TypeScript, and Tailwind CSS, with structured content files so projects, skills, links, and resume details are easy to update.
 
+Live site hosted with vercel: https://homeofchris.vercel.app/
+
 ## Features
 
 - Modern responsive portfolio UI

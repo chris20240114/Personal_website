@@ -6,21 +6,22 @@ import { SectionHeading } from "@/components/section-heading";
 import { Timeline } from "@/components/timeline";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
-import { skillEvidence, skillGroups } from "@/content/skills";
+import { skillEvidence } from "@/content/skills";
+import { PortfolioAssistant } from "@/frontend/portfolio-assistant";
 
 export default function HomePage() {
   const featuredProjects = projects.filter((project) => project.featured).slice(0, 4);
 
   return (
     <>
-      <section className="py-20 sm:py-28">
+      <section className="relative overflow-hidden py-20 sm:py-28">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div className="animate-fade-up">
               <p className="mb-5 inline-flex rounded-md border border-teal-700/20 bg-teal-50 px-3 py-1 text-sm font-semibold text-teal-800 dark:border-teal-300/25 dark:bg-teal-300/10 dark:text-teal-200">
                 {site.availability}
               </p>
-              <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-ink dark:text-zinc-50 sm:text-6xl lg:text-7xl">
+              <h1 className="gradient-text max-w-4xl text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
                 {site.name}
               </h1>
               <p className="mt-5 max-w-3xl text-2xl font-medium leading-snug text-zinc-800 dark:text-zinc-100">{site.role}</p>
@@ -39,13 +40,29 @@ export default function HomePage() {
               </div>
             </div>
 
-            <aside className="rounded-lg border border-zinc-200 bg-white/72 p-5 shadow-soft dark:border-zinc-800 dark:bg-white/[0.04] dark:shadow-soft-dark">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-700 dark:text-teal-300">Focus</p>
-              <div className="mt-5 space-y-4">
-                {skillGroups.slice(0, 4).map((group) => (
-                  <div key={group.label}>
-                    <h2 className="text-sm font-semibold text-ink dark:text-zinc-50">{group.label}</h2>
-                    <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-300">{group.items.join(" / ")}</p>
+            <aside className="float-slow relative overflow-hidden rounded-lg border border-zinc-200 bg-white/78 p-5 shadow-soft backdrop-blur dark:border-zinc-800 dark:bg-white/[0.04] dark:shadow-soft-dark">
+              <div className="absolute inset-x-6 top-0 h-px origin-left bg-gradient-to-r from-teal-400 via-amber-300 to-transparent pulse-line" />
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-700 dark:text-teal-300">System snapshot</p>
+              <div className="mt-5 rounded-lg border border-zinc-200 bg-paper p-4 font-mono text-xs text-zinc-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300">
+                <p>
+                  <span className="text-teal-700 dark:text-teal-300">$</span> inspect --portfolio
+                </p>
+                <div className="mt-4 space-y-2">
+                  <p>backend: FastAPI / GraphQL / Postgres / Neo4j</p>
+                  <p>ai: PitchCoach / LLM feedback / multimodal signals</p>
+                  <p>data: 200k+ records / fairness analysis</p>
+                  <p>ship: Django marketplace / internal tools</p>
+                </div>
+              </div>
+              <div className="mt-5 grid grid-cols-3 gap-3">
+                {[
+                  ["8", "case studies"],
+                  ["5", "skill lanes"],
+                  ["1", "AI assistant"],
+                ].map(([value, label]) => (
+                  <div className="rounded-lg border border-zinc-200 bg-white/70 p-3 text-center dark:border-zinc-800 dark:bg-white/[0.04]" key={label}>
+                    <p className="text-2xl font-semibold text-ink dark:text-zinc-50">{value}</p>
+                    <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">{label}</p>
                   </div>
                 ))}
               </div>
@@ -54,7 +71,11 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-14">
+      <Container>
+        <PortfolioAssistant />
+      </Container>
+
+      <section className="reveal py-14">
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
@@ -72,7 +93,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-14">
+      <section className="reveal py-14">
         <Container>
           <SectionHeading
             eyebrow="Skills by evidence"
@@ -82,7 +103,7 @@ export default function HomePage() {
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {skillEvidence.map((item) => (
               <Link
-                className="rounded-lg border border-zinc-200 bg-white/72 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-soft dark:border-zinc-800 dark:bg-white/[0.04] dark:hover:border-teal-300/60"
+                className="lux-card relative overflow-hidden rounded-lg border border-zinc-200 bg-white/72 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-soft dark:border-zinc-800 dark:bg-white/[0.04] dark:hover:border-teal-300/60"
                 href={item.href}
                 key={item.skill}
               >
@@ -95,7 +116,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-14">
+      <section className="reveal py-14">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
             <div>

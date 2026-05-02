@@ -8,6 +8,7 @@ A polished personal portfolio built with Next.js, React, TypeScript, and Tailwin
 - React and TypeScript
 - Tailwind CSS
 - Server API route for the contact form
+- Server API route for the portfolio assistant
 - Structured content files for easy editing
 
 ## Project Structure
@@ -15,10 +16,13 @@ A polished personal portfolio built with Next.js, React, TypeScript, and Tailwin
 ```txt
 src/
   app/                     Route pages, metadata, and API routes
+  app/api/ask/route.ts     HTTP backend route for portfolio Q&A
   app/api/contact/route.ts HTTP backend route for the contact form
   backend/                 Clear backend files
+  backend/portfolio-assistant.ts Grounded Q&A over local portfolio data
   backend/contact.ts       Contact validation and email delivery
   frontend/                Clear frontend files
+  frontend/portfolio-assistant.tsx Client portfolio assistant
   frontend/contact-form.tsx Client contact form behavior
   components/              Shared server-safe UI components
   content/                 Editable portfolio data
@@ -31,10 +35,13 @@ See `ARCHITECTURE.md` for the frontend/backend split.
 - Update name, email, GitHub, LinkedIn, and resume path in `src/content/site.ts`.
 - Update project case studies in `src/content/projects.ts`.
 - Update skills and evidence mappings in `src/content/skills.ts`.
-- Add or edit writing posts in `src/content/posts.ts`.
 - Replace visual assets in `public/projects`.
 - Replace the resume PDF at `public/resume.pdf`.
 - Add project GitHub/demo links directly in each project's `links` array.
+
+## Portfolio Assistant
+
+The homepage includes an "Ask my work directly" assistant. It answers from local project and skills data through `src/app/api/ask/route.ts`, so it works without an AI provider key. To upgrade it later to a true LLM response, replace the answer-generation logic in `src/backend/portfolio-assistant.ts` while keeping the same API shape.
 
 ## Getting Started
 

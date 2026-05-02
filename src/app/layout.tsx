@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { site } from "@/content/site";
 import { CommandPalette } from "@/frontend/command-palette";
+import { ScrollReveal } from "@/frontend/scroll-reveal";
 import { ThemeProvider } from "@/frontend/theme-provider";
 
 const inter = Inter({
@@ -71,6 +72,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <CommandPalette />
+          <ScrollReveal />
         </ThemeProvider>
       </body>
     </html>

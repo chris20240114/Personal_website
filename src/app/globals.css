@@ -6,12 +6,14 @@
   color-scheme: light;
   --background: #fbfaf7;
   --foreground: #111827;
+  --grid-line: rgba(17, 24, 39, 0.06);
 }
 
 .dark {
   color-scheme: dark;
   --background: #0d1117;
   --foreground: #f7f7f2;
+  --grid-line: rgba(255, 255, 255, 0.055);
 }
 
 * {
@@ -26,8 +28,15 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
     radial-gradient(circle at top left, rgba(45, 212, 191, 0.13), transparent 26rem),
     linear-gradient(180deg, var(--background), var(--background));
+  background-size:
+    48px 48px,
+    48px 48px,
+    auto,
+    auto;
   color: var(--foreground);
   font-family:
     var(--font-inter),
@@ -54,9 +63,17 @@ select {
 
 .dark body {
   background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
     radial-gradient(circle at top left, rgba(45, 212, 191, 0.14), transparent 28rem),
     radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.08), transparent 24rem),
     linear-gradient(180deg, var(--background), var(--background));
+  background-size:
+    48px 48px,
+    48px 48px,
+    auto,
+    auto,
+    auto;
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)) {
@@ -67,4 +84,105 @@ select {
 
 .dark .prose :where(a):not(:where([class~="not-prose"] *)) {
   color: #5eead4;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #111827, #0f766e, #b45309, #111827);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-text 8s ease-in-out infinite;
+}
+
+.dark .gradient-text {
+  background-image: linear-gradient(90deg, #f8fafc, #5eead4, #fcd34d, #f8fafc);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lux-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent, rgba(45, 212, 191, 0.14), transparent);
+  opacity: 0;
+  transform: translateX(-45%);
+  transition:
+    opacity 350ms ease,
+    transform 700ms ease;
+  pointer-events: none;
+}
+
+.lux-card:hover::before {
+  opacity: 1;
+  transform: translateX(45%);
+}
+
+.float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.pulse-line {
+  animation: pulse-line 2.8s ease-in-out infinite;
+}
+
+@keyframes shimmer-text {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scaleX(0.72);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

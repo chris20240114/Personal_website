@@ -49,7 +49,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       <div className="grid gap-10 lg:grid-cols-[0.75fr_0.25fr]">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-700 dark:text-teal-300">
-            {project.category.replace("-", " ")} case study
+            {project.category.replace("-", " ")} technical write-up
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-ink dark:text-zinc-50 sm:text-6xl">{project.title}</h1>
           <p className="mt-4 text-xl leading-8 text-zinc-700 dark:text-zinc-200">{project.subtitle}</p>

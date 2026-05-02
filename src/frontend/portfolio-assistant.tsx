@@ -105,7 +105,7 @@ export function PortfolioAssistant() {
                 </div>
               ) : (
                 <div className="flex h-full min-h-40 items-center text-sm leading-7 text-zinc-400">
-                  Ask about backend depth, AI work, ML/data projects, production experience, or which case study to read first.
+                  Ask about backend depth, AI work, ML/data projects, production experience, or which technical write-up to read first.
                 </div>
               )}
             </div>

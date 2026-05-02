@@ -98,7 +98,10 @@ export const projects: Project[] = [
         description: "Transcript chunks, webcam heuristics, microphone metrics, and presentation context feed the coach response.",
       },
     ],
-    links: [{ label: "GitHub", href: "https://github.com/chris20240114/PitchCoach" }],
+    links: [
+      { label: "GitHub", href: "https://github.com/chris20240114/PitchCoach" },
+      { label: "Live site", href: "https://pitchcoach-presentation.onrender.com/" },
+    ],
   },
   {
     slug: "promptparty",
@@ -134,7 +137,7 @@ export const projects: Project[] = [
     ],
     outcomes: [
       "Clearer architecture for a product that mixes collaborative workflows and graph data.",
-      "A strong backend case study showing API design, database boundaries, and performance thinking.",
+      "A strong backend project write-up showing API design, database boundaries, and performance thinking.",
     ],
     lessons: [
       "Graph databases are powerful when relationships are first-class, but the boundary with relational storage has to be explicit.",
@@ -150,7 +153,10 @@ export const projects: Project[] = [
         description: "FastAPI coordinates GraphQL reads, relational writes, and graph traversal logic.",
       },
     ],
-    links: [{ label: "GitHub", href: "https://github.com/chris20240114" }],
+    links: [
+      { label: "GitHub", href: "https://github.com/chris20240114/prompt_party" },
+      { label: "Live site", href: "https://prompt-party-three.vercel.app/" },
+    ],
   },
   {
     slug: "behn-meyer-agricare",
@@ -197,7 +203,7 @@ export const projects: Project[] = [
         description: "Operational records grouped by status and next action.",
       },
     ],
-    links: [],
+    links: [{ label: "GitHub", href: "https://github.com/chris20240114/BM-Agricare" }],
   },
   {
     slug: "property-assessment-ml-pipeline",
@@ -248,7 +254,10 @@ export const projects: Project[] = [
         description: "Model metrics paired with residual and subgroup analysis.",
       },
     ],
-    links: [{ label: "Notebook repository", href: "https://github.com/chris20240114" }],
+    links: [
+      { label: "GitHub", href: "https://github.com/chris20240114/Property_Fairness" },
+      { label: "Live analysis", href: "https://chris20240114.github.io/Property_Fairness/index.html" },
+    ],
   },
   {
     slug: "rl-pacman-agents",
@@ -295,7 +304,7 @@ export const projects: Project[] = [
         description: "State, action, reward, update, and policy improvement cycle.",
       },
     ],
-    links: [],
+    links: [{ label: "GitHub", href: "https://github.com/chris20240114/fa25-proj-cs188" }],
   },
   {
     slug: "sas-marketplace",
@@ -342,7 +351,7 @@ export const projects: Project[] = [
         description: "Post, browse, inspect, and contact workflow for a school community.",
       },
     ],
-    links: [],
+    links: [{ label: "GitHub", href: "https://github.com/chris20240114/SAS_Exchange" }],
   },
   {
     slug: "ucsc-sip-research-automation",
@@ -389,7 +398,10 @@ export const projects: Project[] = [
         description: "Raw transcript, normalization passes, review output, and analysis handoff.",
       },
     ],
-    links: [],
+    links: [
+      { label: "GitHub", href: "https://github.com/chris20240114/ucsb-lba" },
+      { label: "Live site", href: "https://www.ucsb-lba-weekender.com/" },
+    ],
   },
   {
     slug: "ucsb-event-website",

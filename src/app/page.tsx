@@ -56,7 +56,7 @@ export default function HomePage() {
               </div>
               <div className="mt-5 grid grid-cols-3 gap-3">
                 {[
-                  ["8", "case studies"],
+                  ["8", "project write-ups"],
                   ["5", "skill lanes"],
                   ["1", "AI assistant"],
                 ].map(([value, label]) => (

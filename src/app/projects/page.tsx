@@ -6,7 +6,7 @@ import { ProjectsExplorer } from "@/frontend/projects-explorer";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Searchable project case studies across backend, full-stack, ML/data, research, and frontend work.",
+  description: "Searchable technical project write-ups across backend, full-stack, ML/data, research, and frontend work.",
 };
 
 export default function ProjectsPage() {
@@ -14,8 +14,8 @@ export default function ProjectsPage() {
     <Container className="py-16 sm:py-24">
       <SectionHeading
         eyebrow="Projects"
-        title="Searchable case studies"
-        description="Filter by category or search by project, role, and technology. Each project opens into a deeper technical write-up."
+        title="Technical project write-ups"
+        description="Filter by category or search by project, role, and technology. Each project opens into deeper implementation notes."
       />
       <div className="mt-8">
         <ProjectsExplorer projects={projects} />

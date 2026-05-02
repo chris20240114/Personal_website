@@ -30,7 +30,7 @@ export function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
       <div className="relative z-10 mt-6 text-sm font-semibold text-teal-700 transition group-hover:translate-x-1 dark:text-teal-300">
-        Read case study
+        View project details
       </div>
     </article>
   );

@@ -50,7 +50,7 @@ See `ARCHITECTURE.md` for more detail on the frontend/backend split.
 ## Edit Content
 
 - Profile, email, GitHub, LinkedIn, and resume path: `src/content/site.ts`
-- Project case studies: `src/content/projects.ts`
+- Project write-ups: `src/content/projects.ts`
 - Skills and evidence mappings: `src/content/skills.ts`
 - Resume PDF: `public/resume.pdf`
 - Favicon: `public/favicon.svg`

@@ -24,6 +24,9 @@ export default function ContactPage() {
             <ButtonLink href={`mailto:${site.email}`} external>
               {site.email}
             </ButtonLink>
+            <ButtonLink href={`mailto:${site.alternateEmail}`} external>
+              {site.alternateEmail}
+            </ButtonLink>
             <div className="flex flex-wrap gap-3">
               <ButtonLink href={site.github} external>
                 GitHub

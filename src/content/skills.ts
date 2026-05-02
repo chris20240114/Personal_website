@@ -1,5 +1,11 @@
 export const skillEvidence = [
   {
+    skill: "AI product engineering",
+    evidence: "PitchCoach",
+    detail: "Live speech capture, webcam/audio signals, Node backend, Gemini/OpenAI integration points, and structured AI feedback.",
+    href: "/projects/pitchcoach",
+  },
+  {
     skill: "Backend architecture",
     evidence: "PromptParty",
     detail: "FastAPI, GraphQL, Neo4j, Supabase/PostgreSQL, query design, and API boundaries.",

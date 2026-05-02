@@ -3,7 +3,8 @@ export type ProjectCategory =
   | "full-stack"
   | "ml-data"
   | "research"
-  | "frontend";
+  | "frontend"
+  | "ai";
 
 export type Project = {
   slug: string;
@@ -37,11 +38,68 @@ export const categories: { value: ProjectCategory | "all"; label: string }[] = [
   { value: "backend", label: "Backend" },
   { value: "full-stack", label: "Full-stack" },
   { value: "ml-data", label: "ML/data" },
+  { value: "ai", label: "AI" },
   { value: "research", label: "Research" },
   { value: "frontend", label: "Frontend" },
 ];
 
 export const projects: Project[] = [
+  {
+    slug: "pitchcoach",
+    title: "PitchCoach",
+    subtitle: "Embodied AI presentation coach with live speech, audio, and webcam feedback",
+    role: "Full-stack AI product developer",
+    category: "ai",
+    featured: true,
+    timeframe: "2026",
+    tech: ["Node.js", "JavaScript", "Gemini API", "OpenAI API", "Web Speech API", "Webcam APIs", "Audio analysis"],
+    summary:
+      "Built an AI presentation coach that listens, watches, reacts, asks follow-up questions, and generates actionable feedback from speech, visual, and audio signals.",
+    overview:
+      "PitchCoach is a live practice environment for pitches, speeches, interviews, demos, and presentations. Instead of only analyzing an uploaded recording afterward, it simulates a coach in the room with real-time transcript capture, avatar reactions, delivery signals, and post-session feedback.",
+    motivation:
+      "Presentation coaching is most useful when it catches both content and delivery issues: unclear problem framing, filler words, pace, poor camera presence, weak calls to action, and audience mismatch. PitchCoach combines those signals into a single practice loop.",
+    architecture: [
+      "Browser UI captures webcam, microphone, presentation context, audience mode, and live session state.",
+      "Speech recognition produces transcript chunks while browser speech synthesis can deliver spoken coach feedback.",
+      "Client-side visual heuristics track camera presence, face position, lighting, eye movement, and head movement signals.",
+      "Audio analysis summarizes volume, vocal energy, pitch range, pauses, and rhythm during the session.",
+      "Node backend exposes feedback endpoints and keeps LLM API keys server-side.",
+      "Gemini is preferred when configured, with OpenAI support available for future comparison and local fallback feedback when no key is present.",
+    ],
+    challenges: [
+      "Designing a product loop that feels live without depending on fragile real-time AI assumptions.",
+      "Combining transcript, visual, audio, audience, and timeline data into one normalized feedback payload.",
+      "Keeping API keys and AI-provider calls on the backend while preserving a smooth browser demo.",
+      "Producing useful fallback coaching so the app remains demoable without external AI credentials.",
+    ],
+    built: [
+      "Live coaching mode with transcript capture, timeline events, audience types, and coaching intensity settings.",
+      "Feedback dashboard for pace, filler words, problem clarity, user specificity, demo clarity, impact, and call to action.",
+      "Upload path for transcripts, captions, audio, and video practice files.",
+      "LLM integration point using structured JSON feedback from Gemini, with OpenAI comparison support planned.",
+    ],
+    outcomes: [
+      "A technically impressive AI product prototype with real multimodal signals instead of a chat-only wrapper.",
+      "Clear demonstration of frontend interaction design, backend API boundaries, AI orchestration, and graceful fallback behavior.",
+    ],
+    lessons: [
+      "AI products feel better when deterministic signals and LLM judgment support each other.",
+      "Keeping the payload normalized across live and upload flows makes the backend easier to evolve.",
+      "A useful demo should still work when provider keys are missing or model calls fail.",
+    ],
+    media: [
+      {
+        title: "Live coaching flow",
+        description: "Choose audience and intensity, practice a pitch, answer a follow-up, and receive structured feedback.",
+      },
+      {
+        title: "Multimodal signal pipeline",
+        description: "Transcript chunks, webcam heuristics, microphone metrics, and presentation context feed the coach response.",
+      },
+    ],
+    links: [{ label: "GitHub", href: "https://github.com/chris20240114/PitchCoach" }],
+  },
   {
     slug: "promptparty",
     title: "PromptParty",
@@ -92,7 +150,7 @@ export const projects: Project[] = [
         description: "FastAPI coordinates GraphQL reads, relational writes, and graph traversal logic.",
       },
     ],
-    links: [{ label: "GitHub", href: "https://github.com/your-github" }],
+    links: [{ label: "GitHub", href: "https://github.com/chris20240114" }],
   },
   {
     slug: "behn-meyer-agricare",
@@ -190,7 +248,7 @@ export const projects: Project[] = [
         description: "Model metrics paired with residual and subgroup analysis.",
       },
     ],
-    links: [{ label: "Notebook repository", href: "https://github.com/your-github" }],
+    links: [{ label: "Notebook repository", href: "https://github.com/chris20240114" }],
   },
   {
     slug: "rl-pacman-agents",

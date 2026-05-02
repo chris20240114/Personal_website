@@ -31,7 +31,7 @@ export function PortfolioAssistant() {
   }
 
   return (
-    <section className="reveal py-14">
+    <section className="py-8 sm:py-10">
       <div className="relative overflow-hidden rounded-lg border border-zinc-200 bg-ink p-5 text-white shadow-soft dark:border-zinc-800 dark:bg-zinc-950 dark:shadow-soft-dark sm:p-6 lg:p-8">
         <div className="absolute inset-0 opacity-45">
           <div className="absolute left-6 top-8 h-40 w-40 rounded-full bg-teal-400 blur-3xl" />

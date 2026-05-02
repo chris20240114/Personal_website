@@ -4,6 +4,8 @@ import { useEffect } from "react";
 
 export function ScrollReveal() {
   useEffect(() => {
+    document.documentElement.classList.add("motion-ready");
+
     const items = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
 
     const observer = new IntersectionObserver(
@@ -18,9 +20,20 @@ export function ScrollReveal() {
       { threshold: 0.12 },
     );
 
-    items.forEach((item) => observer.observe(item));
+    items.forEach((item) => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        item.classList.add("is-visible");
+        return;
+      }
 
-    return () => observer.disconnect();
+      observer.observe(item);
+    });
+
+    return () => {
+      observer.disconnect();
+      document.documentElement.classList.remove("motion-ready");
+    };
   }, []);
 
   return null;

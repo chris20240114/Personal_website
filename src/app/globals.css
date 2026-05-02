@@ -99,7 +99,7 @@ select {
   background-image: linear-gradient(90deg, #f8fafc, #5eead4, #fcd34d, #f8fafc);
 }
 
-.reveal {
+.motion-ready .reveal {
   opacity: 0;
   transform: translateY(22px);
   transition:
@@ -107,7 +107,8 @@ select {
     transform 650ms ease;
 }
 
-.reveal.is-visible {
+.motion-ready .reveal.is-visible,
+.reveal {
   opacity: 1;
   transform: translateY(0);
 }

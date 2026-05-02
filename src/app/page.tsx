@@ -14,9 +14,9 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-20 sm:py-28">
+      <section className="relative overflow-hidden pb-8 pt-14 sm:pb-10 sm:pt-16 lg:pt-20">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div className="animate-fade-up">
               <p className="mb-5 inline-flex rounded-md border border-teal-700/20 bg-teal-50 px-3 py-1 text-sm font-semibold text-teal-800 dark:border-teal-300/25 dark:bg-teal-300/10 dark:text-teal-200">
                 {site.availability}
@@ -25,8 +25,8 @@ export default function HomePage() {
                 {site.name}
               </h1>
               <p className="mt-5 max-w-3xl text-2xl font-medium leading-snug text-zinc-800 dark:text-zinc-100">{site.role}</p>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-300">{site.intro}</p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-300">{site.intro}</p>
+              <div className="mt-7 flex flex-wrap gap-3">
                 <ButtonLink href="/resume" variant="primary">
                   Resume
                 </ButtonLink>
@@ -75,7 +75,7 @@ export default function HomePage() {
         <PortfolioAssistant />
       </Container>
 
-      <section className="reveal py-14">
+      <section className="reveal py-10 sm:py-12">
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
